@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>CSE274_Lab03.xcscheme</key>
+		<key>Lab03_Final.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,7 +12,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0286810C19D37A23009CF33E</key>
+		<key>028E82F719F33D3E00D3E406</key>
 		<dict>
 			<key>primary</key>
 			<true/>

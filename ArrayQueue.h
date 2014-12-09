@@ -1,6 +1,5 @@
-//DO NOT CHANGE THIS FILE
-//Author: Bo Brinkman
-//Date: 2013/06/26
+/* This program was written by Ben Clay.  It may be used without the author's consent for non-profit puproses only. */
+
 #include "Queue.h"
 
 template <class T>
@@ -76,7 +75,8 @@ class ArrayQueue : public Queue <T> {
 template <class T>
 ArrayQueue<T>::ArrayQueue(){
     numItems = 0;
-    backingArray = new T[numItems];
+    backingArraySize = 20;
+    backingArray = new T[backingArraySize];
 }
 
 template <class T>
@@ -89,6 +89,9 @@ ArrayQueue<T>::~ArrayQueue() {
 template <class T>
 void ArrayQueue<T>::add(T toAdd){
     numItems++;
+    
+    if (numItems >= backingArraySize)
+        grow();
     
     // Make a new array and put in the new item...
     T* myNewArray = new T[numItems];
@@ -136,5 +139,9 @@ unsigned long ArrayQueue<T>::getNumItems(){
 
 template <class T>
 void ArrayQueue<T>::grow(){
+    T *holder = new T[backingArraySize*2];
+    for (int i = 0; i < backingArraySize; i++)
+        holder[i] = backingArray[i];
     
+    holder = backingArray;
 }
